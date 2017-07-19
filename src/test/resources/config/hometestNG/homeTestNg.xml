@@ -1,0 +1,11 @@
+<suite name="Json data Test Suite" verbose="2">
+
+	<parameter name="browser" value="firefox" />
+	<parameter name="url" value="https://store.23andme.com/en-us/cart/" />
+	
+	<test name="Macys data provider test">
+		<classes>
+			<class name="com.store23andme.test.home.HomeTest" />
+		</classes>
+	</test>
+</suite>
