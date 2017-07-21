@@ -1,5 +1,6 @@
 package com.store23andme.core.desktop.driver;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
@@ -47,7 +48,7 @@ public class Store23driver implements WebDriver , setBrowser, TestConstants{
 		System.out.println("Launching Firefox browser..");
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-		driver.navigate().to(appURL);
+		driver.get(appURL);
 		return driver;
 	}
 	
@@ -67,7 +68,8 @@ public class Store23driver implements WebDriver , setBrowser, TestConstants{
 	}
 
 	public List<WebElement> findElements(By by) {
-		return null;
+		driver.findElements(by);
+		return new ArrayList();
 	}
 
 	public WebElement findElement(By by) {
@@ -79,11 +81,11 @@ public class Store23driver implements WebDriver , setBrowser, TestConstants{
 	}
 
 	public void close() {
-		
+		driver.close();
 	}
 
 	public void quit() {
-		
+		driver.quit();
 	}
 
 	public Set<String> getWindowHandles() {
@@ -106,7 +108,9 @@ public class Store23driver implements WebDriver , setBrowser, TestConstants{
 		return null;
 	}
 
-	
+	public void click(By locator){
+		driver.findElement(locator).click();
+	}
 
 	
 	
